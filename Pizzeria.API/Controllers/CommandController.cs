@@ -18,13 +18,13 @@ namespace Pizzeria.API.Controllers
             this._orderInput = orderInput;
             this._commandApplication = commandApplication;
         }
-      
+
 
         /// <summary>
-        /// Make Custom pizza
+        /// Order own pizza
         /// </summary>
-        /// <param name="employeeInput"></param>
-        /// <returns></returns>
+        /// <param name="orderInput">order input</param>
+        /// <returns>Order with detail</returns>
         [Route("command/orderPizza")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]

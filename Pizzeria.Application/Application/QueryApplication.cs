@@ -34,5 +34,57 @@ namespace Pizzeria.Application.Application
 
         }
 
+        /// <summary>
+        /// get All Sauce
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Sauce> GetAllSauce()
+        {
+            try
+            {
+                return _query.GetAllSauce();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        /// <summary>
+        /// get All Cheese
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Cheese> GetAllCheese()
+        {
+            try
+            {
+                return _query.GetAllCheese();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        /// <summary>
+        /// get All Toppings
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Toppings> GetAllToppings()
+        {
+            try
+            {
+                return _query.GetAllToppings();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }

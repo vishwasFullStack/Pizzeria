@@ -135,7 +135,7 @@ namespace Pizzeria.Repository.Repositories
                 XElement xElementDoc = _fileStorege.ReadXML(filePath);
                 var Crusts = (from element in xElementDoc.Descendants(typeof(Crust).Name)
                               select new Crust
-                              {                                  
+                              {
                                   CurstId = Convert.ToInt32(element.Element("id").Value),
                                   name = element.Element("name").Value,
                                   price = float.Parse(element.Element("price").Value),
@@ -150,6 +150,90 @@ namespace Pizzeria.Repository.Repositories
 
         }
 
+
+        /// <summary>
+        /// Get all Sauce in system
+        /// </summary>
+        /// <param name="crustId"></param>
+        /// <returns></returns>
+        public IEnumerable<Sauce> GetAllSauce()
+        {
+            try
+            {
+                XElement xElementDoc = _fileStorege.ReadXML(filePath);
+                var sauces = (from element in xElementDoc.Descendants(typeof(Sauce).Name)
+                              select new Sauce
+                              {
+                                  SauceId = Convert.ToInt32(element.Element("id").Value),
+                                  name = element.Element("name").Value,
+                                  price = float.Parse(element.Element("price").Value),
+                                  isAvailable = bool.Parse(element.Element("isAvailable").Value)
+                              }).ToList();
+                return sauces;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+        /// <summary>
+        /// Get all Cheese in system
+        /// </summary>
+        /// <param name="crustId"></param>
+        /// <returns></returns>
+        public IEnumerable<Cheese> GetAllCheese()
+        {
+            try
+            {
+                XElement xElementDoc = _fileStorege.ReadXML(filePath);
+                var cheeses = (from element in xElementDoc.Descendants(typeof(Cheese).Name)
+                               select new Cheese
+                               {
+                                   cheeseId = Convert.ToInt32(element.Element("id").Value),
+                                   name = element.Element("name").Value,
+                                   price = float.Parse(element.Element("price").Value),
+                                   quantity = Convert.ToInt32(element.Element("quantity").Value),
+                                   isAvailable = bool.Parse(element.Element("isAvailable").Value)
+                               }).ToList();
+                return cheeses;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+
+        /// <summary>
+        /// Get all Toppings in system
+        /// </summary>
+        /// <param name="crustId"></param>
+        /// <returns></returns>
+        public IEnumerable<Toppings> GetAllToppings()
+        {
+            try
+            {
+                XElement xElementDoc = _fileStorege.ReadXML(filePath);
+                var toppings = (from element in xElementDoc.Descendants(typeof(Toppings).Name)
+                                select new Toppings
+                                {
+                                    toppingsId = Convert.ToInt32(element.Element("id").Value),
+                                    name = element.Element("name").Value,
+                                    price = float.Parse(element.Element("price").Value),
+                                    quantity = Convert.ToInt32(element.Element("quantity").Value),
+                                    isAvailable = bool.Parse(element.Element("isAvailable").Value)
+                                }).ToList();
+                return toppings;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
 
     }
 }
