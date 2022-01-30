@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "98f60dd3-7a0b-4fb3-b6f1-860d2b3f5ffe",
+		"name": "Pizzeria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Plain Pizza order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": 0,\r\n  \"curstId\": 101\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9389/command/orderPizza",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9389",
+					"path": [
+						"command",
+						"orderPizza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pizza with ingredients",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": 0,\r\n  \"curstId\": 102,\r\n  \"sauceId\": 201,\r\n  \"cheeseId\": 301,\r\n  \"toppingsId\": 401\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9389/command/orderPizza",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9389",
+					"path": [
+						"command",
+						"orderPizza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pizza with ingredients double Chease",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": 0,\r\n  \"curstId\": 102,\r\n  \"sauceId\": 201,\r\n  \"cheeseId\": 302,\r\n  \"toppingsId\": 402\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9389/command/orderPizza",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9389",
+					"path": [
+						"command",
+						"orderPizza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllCrust",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9389/query/getAllCrust",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9389",
+					"path": [
+						"query",
+						"getAllCrust"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllSauce",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9389/query/getAllSauce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9389",
+					"path": [
+						"query",
+						"getAllSauce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCheese",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9389/query/getAllCheese",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9389",
+					"path": [
+						"query",
+						"getAllCheese"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllToppings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9389/query/getAllToppings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9389",
+					"path": [
+						"query",
+						"getAllToppings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
