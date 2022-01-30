@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pizzeria.Common\Pizzeria.Common.csproj" />
+    <ProjectReference Include="..\Pizzeria.Repository\Pizzeria.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
