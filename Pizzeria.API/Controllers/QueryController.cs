@@ -12,7 +12,7 @@ namespace Pizzeria.API.Controllers
     {
         
         private readonly IQueryApplication _queryApplication;
-        public QueryController(IOrderInput orderInput, IQueryApplication queryApplication)
+        public QueryController(IQueryApplication queryApplication)
         {
 
             this._queryApplication = queryApplication;
