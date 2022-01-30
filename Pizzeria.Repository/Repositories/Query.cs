@@ -1,4 +1,5 @@
-﻿using Pizzeria.Common.Model;
+﻿using Microsoft.Extensions.Configuration;
+using Pizzeria.Common.Model;
 using Pizzeria.Repository.Interface;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,13 @@ namespace Pizzeria.Repository.Repositories
     public class Query : IQuery
     {
         private readonly IFileStorege _fileStorege;
-        string filePath = @"E:\Work\project\Pizza\Pizzeria\Document\Data\pizzaMaster.xml";
-        public Query(IFileStorege fileStorege)
+        string filePath;
+        private readonly IConfiguration _configuration;
+        public Query(IFileStorege fileStorege, IConfiguration configuration)
         {
-
             this._fileStorege = fileStorege;
+            this._configuration = configuration;
+            filePath = _configuration["PizzaMasterPath"];
         }
 
         /// <summary>

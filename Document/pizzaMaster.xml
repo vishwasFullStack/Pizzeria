@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ingredients>
+	<Crust>
+		<id>101</id>
+		<name>Small</name>
+		<price>250</price>
+		<isAvailable>true</isAvailable>
+	</Crust>
+	<Crust>
+		<id>102</id>
+		<name>Medium</name>
+		<price>300</price>
+		<isAvailable>true</isAvailable>
+	</Crust>
+	<Crust>
+		<id>103</id>
+		<name>Large</name>
+		<price>400</price>
+		<isAvailable>true</isAvailable>
+	</Crust>
+	<Sauce>
+		<id>201</id>
+		<name>Pesto</name>
+		<price>50</price>
+		<isAvailable>true</isAvailable>
+	</Sauce>
+	<Sauce>
+		<id>202</id>
+		<name>White Garlic</name>
+		<price>30</price>
+		<isAvailable>true</isAvailable>
+	</Sauce>
+	<Cheese>
+		<id>301</id>
+		<name>Mozzarella Cheese</name>
+		<price>30</price>
+		<quantity>1</quantity>
+		<isAvailable>true</isAvailable>		
+	</Cheese>
+	<Cheese>
+		<id>302</id>
+		<name>Provolone Cheese</name>
+		<price>30</price>
+		<quantity>2</quantity>
+		<isAvailable>true</isAvailable>		
+	</Cheese>
+	<Toppings>
+		<id>401</id>
+		<name>Baby Corn</name>
+		<price>40</price>
+		<quantity>1</quantity>
+		<isAvailable>true</isAvailable>		
+	</Toppings>
+	<Toppings>
+		<id>402</id>
+		<name>Chikken Tikka</name>
+		<price>70</price>
+		<quantity>2</quantity>
+		<isAvailable>true</isAvailable>
+	</Toppings>
+	<Toppings>
+		<id>403</id>
+		<name>Mix Veg</name>
+		<price>70</price>
+		<quantity>1</quantity>
+		<isAvailable>true</isAvailable>
+	</Toppings>
+	
+</ingredients>
