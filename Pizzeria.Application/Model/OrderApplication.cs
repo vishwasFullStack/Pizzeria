@@ -8,20 +8,25 @@ namespace Pizzeria.Application.Model
 {
     public class OrderApplication : IOrderApplication
     {
-
         private readonly IOrderInput _orderInput;
-        private readonly IOrderRepository _orderRepository;
-        public OrderApplication(IOrderInput orderInput, IOrderRepository orderRepository)
+        private readonly IQuery _query;
+        public OrderApplication(IOrderInput orderInput, IQuery query)
         {
             this._orderInput = orderInput;
-            this._orderRepository = orderRepository;
+            this._query = query;
         }
+
         public string orderPizza(OrderInput orderInput)
         {
             try
             {
-                var result = _orderRepository.orderPizza(orderInput);
-                return result;
+                var crustDetails = _query.GetCrustByID(orderInput.CurstId);
+                var cheeseDetails = _query.GetCheaseById(orderInput.CheeseId);
+                var sauceDetails = _query.GetSauceById(orderInput.SauceId);
+                var ToppingDetails = _query.GetToppingsById(orderInput.ToppingsId);
+
+
+                return "Order created";
             }
             catch (Exception ex)
             {

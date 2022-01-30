@@ -12,6 +12,7 @@ using Pizzeria.Common.Interface;
 using Pizzeria.Common.Model;
 using Pizzeria.Repository.Interface;
 using Pizzeria.Repository.Model;
+using Pizzeria.Repository.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,10 @@ namespace Pizzeria.API
             services.AddScoped<IOrderApplication, OrderApplication>();
             services.AddScoped<IOrderInput, OrderInput>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IQuery, Query>();
+            services.AddScoped<IFileStorege, FileStorege>();
             
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

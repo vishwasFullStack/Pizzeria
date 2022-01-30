@@ -7,15 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pizzeria.Repository.Model
+namespace Pizzeria.Repository.Interface
 {
     public class OrderRepository : IOrderRepository
     {
+
+        private readonly IOrderInput _orderInput;
+        private readonly IQuery _query;
+        public OrderRepository(IOrderInput orderInput, IQuery query)
+        {
+            this._orderInput = orderInput;
+            this._query = query;
+        }
 
         public string orderPizza(OrderInput orderInput)
         {
             try
             {
+                _query.GetCrustByID(orderInput.CurstId);
                 return "order created";
             }
             catch (Exception ex)
