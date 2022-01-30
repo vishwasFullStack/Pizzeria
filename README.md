@@ -10,6 +10,7 @@ Set PizzaMasterPath : "\Document\pizzaMaster.xml"
 Postman Collection available at "\Pizzeria\Document\Pizzeria.postman_collection.json"
 
 .net core API created:
+
 1. getAllCrust: Will return all available Crust in system
 2. getAllSauce: Will return all available Sauce in system
 3. getAllCheese: Will return all available Chease in system
@@ -25,6 +26,10 @@ Patter Used in implentation:
 3. Scopped
 4. SOLID princeple
 
+Testing: Testing Done by using Unit test project and Postman collection.
+
+
+Note: Because of time constarnt less automated test case added, and UI not created.
 
 
 
