@@ -1,10 +1,7 @@
-﻿using Pizzeria.Repository.Interface;
-using Pizzeria.Repository.Model;
+﻿using Pizzeria.Common.Model;
+using Pizzeria.Repository.Interface;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace Pizzeria.Repository.Repositories
@@ -23,11 +20,9 @@ namespace Pizzeria.Repository.Repositories
         {
             try
             {
-
                 XElement xElementDoc = _fileStorege.ReadXML(filePath);
                 XElement result = xElementDoc.Descendants(typeof(Crust).Name)
                                   .FirstOrDefault(el => el.Element("id") != null && el.Element("id").Value == crustId.ToString());
-
                 if (result != null)
                 {
                     return new Crust
@@ -51,9 +46,8 @@ namespace Pizzeria.Repository.Repositories
         {
             try
             {
-
                 XElement xElementDoc = _fileStorege.ReadXML(filePath);
-                XElement result = xElementDoc.Descendants(typeof(Crust).Name)
+                XElement result = xElementDoc.Descendants(typeof(Sauce).Name)
                                   .FirstOrDefault(el => el.Element("id") != null && el.Element("id").Value == sauceId.ToString());
 
                 if (result != null)
@@ -72,14 +66,13 @@ namespace Pizzeria.Repository.Repositories
             {
                 throw;
             }
-
         }
         public Cheese GetCheaseById(int cheeseId)
         {
             try
             {
                 XElement xElementDoc = _fileStorege.ReadXML(filePath);
-                XElement result = xElementDoc.Descendants(typeof(Crust).Name)
+                XElement result = xElementDoc.Descendants(typeof(Cheese).Name)
                                   .FirstOrDefault(el => el.Element("id") != null && el.Element("id").Value == cheeseId.ToString());
 
                 if (result != null)

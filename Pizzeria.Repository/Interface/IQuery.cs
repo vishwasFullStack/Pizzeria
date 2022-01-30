@@ -1,4 +1,4 @@
-﻿using Pizzeria.Repository.Model;
+﻿using Pizzeria.Common.Model;
 
 namespace Pizzeria.Repository.Interface
 {

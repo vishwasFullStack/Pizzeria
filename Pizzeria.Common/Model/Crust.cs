@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pizzeria.Repository.Model
+namespace Pizzeria.Common.Model
 {
-    public class Sauce: Ingredient
+    public class Crust: Ingredient
     {
-        public int SauceId { get; set; }
+        public int CurstId { get; set; }
     }
 }

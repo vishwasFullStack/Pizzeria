@@ -11,7 +11,6 @@ using Pizzeria.Application.Model;
 using Pizzeria.Common.Interface;
 using Pizzeria.Common.Model;
 using Pizzeria.Repository.Interface;
-using Pizzeria.Repository.Model;
 using Pizzeria.Repository.Repositories;
 using System;
 using System.Collections.Generic;
@@ -38,12 +37,10 @@ namespace Pizzeria.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pizzeria.API", Version = "v1" });
             });
-            services.AddScoped<IOrderApplication, OrderApplication>();
+            services.AddScoped<ICommandApplication, CommandApplication>();
             services.AddScoped<IOrderInput, OrderInput>();
-            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IQuery, Query>();
-            services.AddScoped<IFileStorege, FileStorege>();
-            
+            services.AddScoped<IFileStorege, FileStorege>();           
 
         }
 

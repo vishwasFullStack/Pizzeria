@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pizzeria.Repository.Model
+namespace Pizzeria.Common.Model
 {
-    public class Toppings : Ingredient
+    public class Cheese: Ingredient
     {
-        public int toppingsId { get; set; }
+        public int cheeseId { get; set; }
         public int quantity { get; set; }
     }
 }

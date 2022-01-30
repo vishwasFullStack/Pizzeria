@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace Pizzeria.API.Controllers
 {
-    public class OrderController : Controller
+    public class CommandController : Controller
     {
 
         private readonly IOrderInput _orderInput;
-        private readonly IOrderApplication _orderApplication;
-        public OrderController(IOrderInput orderInput, IOrderApplication orderApplication)
+        private readonly ICommandApplication _orderApplication;
+        public CommandController(IOrderInput orderInput, ICommandApplication orderApplication)
         {
             this._orderInput = orderInput;
             this._orderApplication = orderApplication;
@@ -27,7 +27,7 @@ namespace Pizzeria.API.Controllers
         /// </summary>
         /// <param name="employeeInput"></param>
         /// <returns></returns>
-        [Route("orderPizza")]
+        [Route("Command/orderPizza")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

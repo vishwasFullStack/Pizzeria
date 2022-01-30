@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pizzeria.Repository.Model
+namespace Pizzeria.Common.Model
 {
     public class Ingredient
     {
