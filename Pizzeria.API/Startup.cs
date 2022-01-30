@@ -6,16 +6,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Pizzeria.Application.Application;
 using Pizzeria.Application.Interface;
-using Pizzeria.Application.Model;
 using Pizzeria.Common.Interface;
 using Pizzeria.Common.Model;
 using Pizzeria.Repository.Interface;
 using Pizzeria.Repository.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Pizzeria.API
 {
@@ -38,6 +34,7 @@ namespace Pizzeria.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pizzeria.API", Version = "v1" });
             });
             services.AddScoped<ICommandApplication, CommandApplication>();
+            services.AddScoped<IQueryApplication, QueryApplication>();
             services.AddScoped<IOrderInput, OrderInput>();
             services.AddScoped<IQuery, Query>();
             services.AddScoped<IFileStorege, FileStorege>();           

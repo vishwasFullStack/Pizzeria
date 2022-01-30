@@ -4,7 +4,7 @@ using Pizzeria.Common.Model;
 using Pizzeria.Repository.Interface;
 using System;
 
-namespace Pizzeria.Application.Model
+namespace Pizzeria.Application.Application
 {
     public class CommandApplication : ICommandApplication
     {

@@ -1,6 +1,7 @@
 ﻿using Pizzeria.Common.Model;
 using Pizzeria.Repository.Interface;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -120,6 +121,33 @@ namespace Pizzeria.Repository.Repositories
             {
                 throw;
             }
+        }
+
+        /// <summary>
+        /// Get all Crust in system
+        /// </summary>
+        /// <param name="crustId"></param>
+        /// <returns></returns>
+        public IEnumerable<Crust> GetAllCrust()
+        {
+            try
+            {
+                XElement xElementDoc = _fileStorege.ReadXML(filePath);
+                var Crusts = (from element in xElementDoc.Descendants(typeof(Crust).Name)
+                              select new Crust
+                              {                                  
+                                  CurstId = Convert.ToInt32(element.Element("id").Value),
+                                  name = element.Element("name").Value,
+                                  price = float.Parse(element.Element("price").Value),
+                                  isAvailable = bool.Parse(element.Element("isAvailable").Value)
+                              }).ToList();
+                return Crusts;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
         }
 
 

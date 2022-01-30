@@ -8,32 +8,32 @@ using System;
 
 namespace Pizzeria.API.Controllers
 {
-    public class CommandController : Controller
+    public class QueryController : Controller
     {
 
-        private readonly IOrderInput _orderInput;
-        private readonly ICommandApplication _commandApplication;
-        public CommandController(IOrderInput orderInput, ICommandApplication commandApplication)
+        
+        private readonly IQueryApplication _queryApplication;
+        public QueryController(IOrderInput orderInput, IQueryApplication queryApplication)
         {
-            this._orderInput = orderInput;
-            this._commandApplication = commandApplication;
+
+            this._queryApplication = queryApplication;
         }
       
 
         /// <summary>
-        /// Make Custom pizza
+        /// Get All Crust
         /// </summary>
         /// <param name="employeeInput"></param>
         /// <returns></returns>
-        [Route("command/orderPizza")]
-        [HttpPost]
+        [Route("query/getAllCrust")]
+        [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult orderPizza([FromBody] OrderInput orderInput)
+        public IActionResult orderPizza()
         {
             try
             {
-                var result = _commandApplication.orderPizza(orderInput);
+                var result = _queryApplication.GetAllCrust();
                 return Ok(result);
             }
             catch (Exception ex)
