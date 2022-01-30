@@ -3,6 +3,7 @@ using Pizzeria.Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Xml.Linq;
 
 namespace Pizzeria.Repository.Repositories
@@ -17,7 +18,12 @@ namespace Pizzeria.Repository.Repositories
             this._fileStorege = fileStorege;
         }
 
-        public Crust GetCrustByID(int crustId)
+        /// <summary>
+        /// get Curst by ID
+        /// </summary>
+        /// <param name="crustId"></param>
+        /// <returns></returns>
+        public  Crust GetCrustByID(int crustId)
         {
             try
             {
@@ -26,13 +32,14 @@ namespace Pizzeria.Repository.Repositories
                                   .FirstOrDefault(el => el.Element("id") != null && el.Element("id").Value == crustId.ToString());
                 if (result != null)
                 {
-                    return new Crust
+                   var item = new Crust
                     {
                         CurstId = crustId,
                         name = result.Element("name").Value,
                         price = float.Parse(result.Element("price").Value),
                         isAvailable = bool.Parse(result.Element("isAvailable").Value)
                     };
+                    return item;
                 }
                 return null;
             }
@@ -43,6 +50,11 @@ namespace Pizzeria.Repository.Repositories
 
         }
 
+        /// <summary>
+        /// get Sauce by ID
+        /// </summary>
+        /// <param name="sauceId"></param>
+        /// <returns></returns>
         public Sauce GetSauceById(int sauceId)
         {
             try
@@ -68,6 +80,12 @@ namespace Pizzeria.Repository.Repositories
                 throw;
             }
         }
+
+        /// <summary>
+        /// get Cheese by ID
+        /// </summary>
+        /// <param name="cheeseId"></param>
+        /// <returns></returns>
         public Cheese GetCheaseById(int cheeseId)
         {
             try
@@ -96,6 +114,11 @@ namespace Pizzeria.Repository.Repositories
 
         }
 
+        /// <summary>
+        /// get Toppings by ID
+        /// </summary>
+        /// <param name="toppingId"></param>
+        /// <returns></returns>
         public Toppings GetToppingsById(int toppingId)
         {
             try
